@@ -1,11 +1,13 @@
 import Nav from "./NavBar"
+import ItemListContainer from "./ItemListContainer"
 
 const App = () => {
     return (
-        <header>
+        <><header>
             <h1>MOROBAT</h1>
-            <Nav/>
+            <Nav />
         </header>
+        <ItemListContainer greeting="HOLA! ACA VAN LOS PRODUCTOS" /></>
     )
 }
 
