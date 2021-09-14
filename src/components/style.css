@@ -3,3 +3,13 @@ nav ul li {
     padding: 10px;
     text-align: center;
 }
+
+.cart-widget .cart-widget_counter{
+    align-items: center;
+    font-size: 1.5rem;
+    justify-content: space-around;
+}
+
+.item-count {
+    text-align: center;
+}
