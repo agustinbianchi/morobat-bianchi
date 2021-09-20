@@ -1,12 +1,17 @@
 import { useState } from "react";
 
-const ItemCount = () => {
+const ItemCount = ({stock, initial,}) => {
 
 
-const [contador, setContador] = useState(0)
+const [contador, setContador] = useState(initial)
 
 const handleSuma = () => {
-    setContador(contador+1);
+    if (contador >= stock) {
+        return;
+    } else {
+        setContador(contador+1);
+    }
+    
 }
 
 const handleResta = () => {
@@ -16,7 +21,9 @@ const handleResta = () => {
     setContador(contador-1);
 }
 
-const onAdd = () => {} 
+const onAdd = () => {
+    console.log("confirmaste compra");
+} 
 
 return (
     <>
