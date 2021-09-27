@@ -2,19 +2,14 @@ import {useState,useEffect} from "react";
 import ItemDetail from "./ItemDetail";
 
 class ProductoDetalle {
-    constructor(id, categoria, marca, tamanio, precio, detalle) {
-        this.id = parseInt(id);
-        this.categoria = categoria;
-        this.marca = marca;
-        this.tamanio = tamanio;
-        this.precio = parseInt(precio);
+    constructor(detalle) {
         this.detalle = detalle;
     }
 }
 
 const productosDetalle = [];
 
-productosDetalle.push (new ProductoDetalle (1,"Bateria","Moura","12x45", 10000," lorem ipsum lorem lorem loremo oasdasddfgfdsfadsfdgfdsfaf" ));
+productosDetalle.push (new ProductoDetalle ("La batería es el elemento encargado de suministrarle energía eléctrica a nuestro vehículo, permitiendo que el motor y los elementos auxiliares puedan funcionar correctamente. ... La función principal de la batería es propiciar la puesta en marcha del motor de arranque, entrando posteriormente en acción el alternador." ));
 
 const ItemDetailContainer = ({greeting}) => {
     
