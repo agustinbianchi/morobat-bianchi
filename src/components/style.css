@@ -17,3 +17,8 @@ nav ul li {
 .cart-text {
     font-size: 10px;
 }
+
+.item-list-container {
+    display: flex;
+    flex-wrap: wrap;
+}
