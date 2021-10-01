@@ -1,14 +1,9 @@
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({producto}) => {
-
-    const reciboDatosDelItemCount = (contador) => {
-    console.log("recibo data del itemCount");
-    console.log(contador);
-}
     
-    const onAdd = () => {
-        console.log("confirmaste compra");
+    const onAdd = (contador) => {
+        console.log(`COMPRA HECHA! Adquiriste ${contador} unidades de ${producto.categoria} ${producto.marca} ${producto.tamanio}`);
     }
 
     return (
@@ -16,8 +11,7 @@ const ItemDetail = ({producto}) => {
                 <div className="card-body">
                     <h5 className="card-title">{producto.categoria} {producto.marca} {producto.tamanio}</h5>
                     <p className="card-text">{producto.detalle}</p>
-                    <ItemCount stock={producto.cantidad} initial={0}  miCallBack={reciboDatosDelItemCount} />
-                    <button type="button" class="btn btn-success me-3 ms-3 mt-3" onClick={onAdd}>AÑADIR AL CARRITO</button>
+                    <ItemCount stock={producto.cantidad} initial={0}  onAdd={onAdd} />
                 </div>
         </div>
     )

@@ -12,7 +12,7 @@ const Nav = () => {
                     <li><NavLink to="/productos/Radiador">RADIADORES</NavLink></li>
                     <li><NavLink to="/productos/Bobina">BOBINAS</NavLink></li>
                     <li><NavLink to="/productos/Aceite">ACEITES</NavLink></li>
-                    <li><NavLink to="/cart"><CartWidget/></NavLink></li>
+                    <li><NavLink to="/cartWidget"><CartWidget/></NavLink></li>
                 </ul>
             </div>
         </nav>

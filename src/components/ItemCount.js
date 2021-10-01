@@ -1,7 +1,7 @@
+import { Link } from "react-router-dom"
 import { useState } from "react";
 
-const ItemCount = ({stock, initial, miCallBack}) => {
-
+const ItemCount = ({stock, initial, onAdd}) => {
 
 const [contador, setContador] = useState(initial)
 
@@ -22,7 +22,6 @@ const handleResta = () => {
 }
 
 console.log(contador);
-miCallBack(contador)
 
 return (
     <>
@@ -30,6 +29,7 @@ return (
         <p>Cantidad: {contador}</p>
         <button type="button" class="btn btn-danger me-3 ms-3" onClick={handleResta}>-</button>
         <button type="button" class="btn btn-info me-3 ms-3" onClick={handleSuma}>+</button>
+        <Link to="/cart"><button type="button" class="btn btn-success me-3 ms-3 mt-3" onClick={()=>onAdd(contador)}>AÑADIR AL CARRITO</button></Link>
     </div>
     </>
     
