@@ -520,7 +520,7 @@ const ItemDetailContainer = ({greeting}) => {
         })
         
         simulacion_de_pedido_detalle.then(productos=>{
-            const producto = productos.find(producto => producto.id = id);
+            const producto = productos.find(producto => producto.id == id);
             setProducto(producto);
         })
     },[id])

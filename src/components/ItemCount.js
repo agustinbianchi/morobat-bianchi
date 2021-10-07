@@ -27,9 +27,9 @@ return (
     <>
     <div className="item-count">
         <p>Cantidad: {contador}</p>
-        <button type="button" class="btn btn-danger me-3 ms-3" onClick={handleResta}>-</button>
-        <button type="button" class="btn btn-info me-3 ms-3" onClick={handleSuma}>+</button>
-        <Link to="/cart"><button type="button" class="btn btn-success me-3 ms-3 mt-3" onClick={()=>onAdd(contador)}>AÑADIR AL CARRITO</button></Link>
+        <button type="button" className="btn btn-danger me-3 ms-3" onClick={handleResta}>-</button>
+        <button type="button" className="btn btn-info me-3 ms-3" onClick={handleSuma}>+</button>
+        <Link to="/cart"><button type="button" className="btn btn-success me-3 ms-3 mt-3" onClick={()=>onAdd(contador)}>AÑADIR AL CARRITO</button></Link>
     </div>
     </>
     

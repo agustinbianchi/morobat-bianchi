@@ -1,9 +1,13 @@
+import { useContext } from "react";
+import CartContext from "./CartContext";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({producto}) => {
+
+    const {addItem} = useContext (CartContext)
     
     const onAdd = (contador) => {
-        console.log(`COMPRA HECHA! Adquiriste ${contador} unidades de ${producto.categoria} ${producto.marca} ${producto.tamanio}`);
+        addItem(producto, contador);
     }
 
     return (
@@ -11,7 +15,7 @@ const ItemDetail = ({producto}) => {
                 <div className="card-body">
                     <h5 className="card-title">{producto.categoria} {producto.marca} {producto.tamanio}</h5>
                     <p className="card-text">{producto.detalle}</p>
-                    <ItemCount stock={producto.cantidad} initial={0}  onAdd={onAdd} />
+                    <ItemCount stock={producto.cantidad} initial={0} onAdd={onAdd}/>
                 </div>
         </div>
     )
