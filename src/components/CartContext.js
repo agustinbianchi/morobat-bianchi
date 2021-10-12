@@ -31,13 +31,19 @@ export const ProviderCustomizado = ({children}) => {
         setCarrito([]);
     }
 
+    const cantidad = (contador) => {
+        return(
+        contador
+        )
+    }
+
     const valorDelContexto = {
         carrito : carrito,
         addItem : addItem,
         removeItem : removeItem,
         clear : clear,
-
-        setCarrito : setCarrito
+        setCarrito : setCarrito,
+        cantidad : cantidad
     }
 
     return (
