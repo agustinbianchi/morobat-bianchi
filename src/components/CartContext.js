@@ -25,17 +25,17 @@ export const ProviderCustomizado = ({children}) => {
         let newCarrito = [...carrito]
         newCarrito.splice(carrito.indexOf(itemInCart), 1)
         setCarrito(newCarrito)
-}
+    }
 
     const clear = () => {
         setCarrito([]);
     }
 
-    const cantidad = (contador) => {
-        return(
-        contador
-        )
-    }
+    const getCantidad = () => {
+        if (carrito.length === 0) {
+        }else {
+            return carrito.length
+        }}
 
     const valorDelContexto = {
         carrito : carrito,
@@ -43,7 +43,7 @@ export const ProviderCustomizado = ({children}) => {
         removeItem : removeItem,
         clear : clear,
         setCarrito : setCarrito,
-        cantidad : cantidad
+        getCantidad : getCantidad
     }
 
     return (
