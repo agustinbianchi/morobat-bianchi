@@ -17,7 +17,7 @@ if (carrito.length > 0){
                     const total = producto.contador * producto.precio;
                     listaDeTotal.push(total);
                     return (
-                        <li key={producto.id} > {producto.contador} {producto.categoria} {producto.marca} {producto.tamanio} ${producto.precio} SUBTOTAL: ${total} <button onClick={removeItem}>X</button></li>) 
+                        <li key={producto.precio} > {producto.contador} {producto.categoria} {producto.marca} {producto.tamanio} ${producto.precio} SUBTOTAL: ${total} <button onClick={removeItem}>X</button></li>) 
                 })}
             </ul>
             <h3>TOTAL: ${listaDeTotal.reduce((prev, next) => prev + next,0)} </h3>
