@@ -19,7 +19,6 @@ const ConfirmarCompra = (resultado) =>{
 
         },
         items : carrito,
-        //date : firestore.Timestamp.now(),
         total : listaDeTotal
     }
 
@@ -29,9 +28,7 @@ const ConfirmarCompra = (resultado) =>{
     .then((resultado)=>{
         setCarrito([]);
         if(resultado){
-            return ("Orden realizada con exito. Su codigo de orden es: " + resultado.id)
-            
-            
+            return alert("Orden realizada con exito. Su codigo de orden es: " + resultado.id)
         }})
     .catch(()=>{
     }

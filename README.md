@@ -28,5 +28,5 @@ Se utilizó para brindarle enrutamiento a la página mediante la colección de c
 ## Firebase
 Se utilizó Firebase para la conexión con la base de datos. La misma sirve para la carga de los productos a seleccionar como para la carga de las ordenes de compra.
 
-# Gif de navagación
-
+# GIF DE NAVEGACIÓN
+[Ver GIF](https://media.giphy.com/media/n4enfS4VAoxNigQKLh/giphy.gif)
