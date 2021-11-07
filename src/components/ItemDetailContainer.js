@@ -1,49 +1,48 @@
-import {useState,useEffect} from "react";
+import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router";
 import { firestore } from "../firebase";
 
 const ItemDetailContainer = () => {
-    
-    const [producto,setProducto] = useState ([])
-    const {id} = useParams()
+  const [producto, setProducto] = useState([]);
+  const { id } = useParams();
 
-    console.log(id);
-    
-    useEffect(()=>{
+  useEffect(() => {
+    const db = firestore;
 
-      const db = firestore
+    const coleccion = db.collection("productos");
 
-      const coleccion = db.collection("productos")
+    let consulta = coleccion.doc(id);
+    consulta = consulta.get();
 
-      let consulta = coleccion.doc(id)
-      consulta = consulta.get()
-
-      consulta.then((resultado)=>{
-        console.log("estuvo todo bien");
-
-        const productos_finales = resultado.data()
-        setProducto(productos_finales)
+    consulta
+      .then((resultado) => {
+        const productos_finales = resultado.data();
+        setProducto(productos_finales);
       })
-      .catch(()=>{
-        console.log("hubo un error");
-      })
+      .catch(() => {});
+  }, [id]);
 
-    },[id])
-
-    console.log(producto)
-
-
+  if (producto.length === 0) {
     return (
-        <>
-            <div>
-                <div>
-                    <ItemDetail producto={producto} />
-                </div>
-            </div>
-        </>
-    )
-    
-}
+      <div className="d-flex align-items-center">
+        <strong>Loading...</strong>
+        <div
+          className="spinner-border ml-auto"
+          role="status"
+          aria-hidden="true"
+        ></div>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <div>
+          <ItemDetail producto={producto} />
+        </div>
+      </div>
+    );
+  }
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

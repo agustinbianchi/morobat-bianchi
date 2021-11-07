@@ -20,9 +20,6 @@ const ItemListContainer = () => {
   
           consulta
           .then((resultado)=>{
-            console.log("estuvo todo bien");
-            console.log(resultado.docs);
-  
             const productos_finales = resultado.docs.map(producto => {
               const producto_final = {
                 id: producto.id,
@@ -33,7 +30,6 @@ const ItemListContainer = () => {
             setProductos(productos_finales)
           })
           .catch(()=>{
-            console.log("hubo un error");
           })
         }else if (categoria === "Radiador") {
           let consulta = coleccion.where("categoria","==","Radiador")
@@ -41,9 +37,6 @@ const ItemListContainer = () => {
   
           consulta
           .then((resultado)=>{
-            console.log("estuvo todo bien");
-            console.log(resultado.docs);
-  
             const productos_finales = resultado.docs.map(producto => {
               const producto_final = {
                 id: producto.id,
@@ -54,7 +47,6 @@ const ItemListContainer = () => {
             setProductos(productos_finales)
           })
           .catch(()=>{
-            console.log("hubo un error");
           })
         } else if (categoria === "Bobina") {
           let consulta = coleccion.where("categoria","==","Bobina")
@@ -62,9 +54,6 @@ const ItemListContainer = () => {
   
           consulta
           .then((resultado)=>{
-            console.log("estuvo todo bien");
-            console.log(resultado.docs);
-  
             const productos_finales = resultado.docs.map(producto => {
               const producto_final = {
                 id: producto.id,
@@ -75,7 +64,6 @@ const ItemListContainer = () => {
             setProductos(productos_finales)
           })
           .catch(()=>{
-            console.log("hubo un error");
           })
         }else if (categoria === "Aceite") {
           let consulta = coleccion.where("categoria","==","Aceite")
@@ -83,9 +71,6 @@ const ItemListContainer = () => {
   
           consulta
           .then((resultado)=>{
-            console.log("estuvo todo bien");
-            console.log(resultado.docs);
-  
             const productos_finales = resultado.docs.map(producto => {
               const producto_final = {
                 id: producto.id,
@@ -96,15 +81,11 @@ const ItemListContainer = () => {
             setProductos(productos_finales)
           })
           .catch(()=>{
-            console.log("hubo un error");
           })
         }else {
           coleccion
           .get()
           .then((resultado)=>{
-            console.log("estuvo todo bien");
-            console.log(resultado.docs);
-  
             const productos_finales = resultado.docs.map(producto => {
               const producto_final = {
                 id: producto.id,
@@ -115,33 +96,24 @@ const ItemListContainer = () => {
             setProductos(productos_finales)
           })
           .catch(()=>{
-            console.log("hubo un error");
           })
         }
     },[categoria])
 
-
-    console.log(productos)
-
-
     if (productos.length > 0) {
         return (
-        <>
             <div>
                 <div className="item-list-container">
                     <ItemList productos={productos} />
                 </div>
             </div>
-        </>
     )
     } else {
         return (
-        <>
         <div className="d-flex align-items-center">
             <strong>Loading...</strong>
             <div className="spinner-border ml-auto" role="status" aria-hidden="true"></div>
         </div>
-        </>
     )
     }
     

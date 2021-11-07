@@ -17,7 +17,7 @@ const [totalProductos, setTotalProductos] = useState(0)
     return(
         <>
             {totalProductos > 0 && 
-                <div><span className="card-widget_counter">{getCantidad()}{totalProductos}</span> <span className="material-icons cart-widget">shopping_cart</span></div>
+                <div><span className="card-widget_counter">{getCantidad()}{totalProductos}</span><span className="material-icons cart-widget">shopping_cart</span></div>
             }
         </>
     )

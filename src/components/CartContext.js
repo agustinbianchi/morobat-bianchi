@@ -10,7 +10,7 @@ export const ProviderCustomizado = ({children}) => {
 
     const addItem = (producto, contador, id)=> {
         const productoConCantidad = {...producto, contador};
-        const itemInCart= carrito.find(producto => producto.id === id)
+        const itemInCart= carrito.find(producto => producto.id = id)
         if(!itemInCart){
             setCarrito([...carrito, productoConCantidad])
         } else {
@@ -34,7 +34,7 @@ export const ProviderCustomizado = ({children}) => {
     const getCantidad = () => {
         if (carrito.length === 0) {
         }else {
-            return carrito.length
+            return carrito.contador
         }}
 
     const valorDelContexto = {
